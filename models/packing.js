@@ -1,12 +1,11 @@
 var orm = require("../config/orm.js");
 
 var list = {
-    selectAll: function (table) {
+    selectAll: function (cb) {
         orm.selectAll("packinglist", function (res) {
-            console.log(res);
+            cb(res);
         });
     },
-
     insertOne: function (table, colName, inputValue) {
         orm.insertOne("packinglist", table, colName, inputValue, function (res) {
             console.log(res);
