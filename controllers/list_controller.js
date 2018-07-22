@@ -5,6 +5,7 @@ var router = express.Router();
 var packing = require("../models/packing.js");
 
 router.get("/", function (req, res) {
+
   packing.selectAll(function (data) {
     var hbsObject = {
       packings: data
