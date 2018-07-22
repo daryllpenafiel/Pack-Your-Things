@@ -17,7 +17,6 @@ router.get("/", function (req, res) {
 
 router.post("/api/list", function (req, res) {
   packing.create([req.body.name], function (result) {
-    // Send back the ID of the new quote
     res.json({
       id: result.insertId
     });
@@ -26,9 +25,6 @@ router.post("/api/list", function (req, res) {
 
 router.put("/api/list/:id", function (req, res) {
   var taskId = "id = " + req.params.id;
-
-  // console.log("condition", condition);
-
   packing.update(req.body, taskId, function (result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404

@@ -2,22 +2,20 @@ var orm = require("../config/orm.js");
 
 var list = {
     selectAll: function (cb) {
-        orm.all("packinglist", function (res) {
+        orm.selectAll("packinglist", function (res) {
             cb(res);
         });
     },
-    insertOne: function (table, colName, inputValue) {
-        orm.insertOne("packinglist", table, colName, inputValue, function (res) {
-            console.log(res);
+    insertOne: function (colName, inputValue,cb) {
+        orm.insertOne("packinglist", colName, inputValue, function (res) {
+            cb(res);
         });
     },
-
-    updateOne: function (table, colName, inputValue, itemId) {
-        orm.updateOne("packinglist", table, colName, inputValue, itemId, function (res) {
-            console.log(res);
+    updateOne: function (condition, cb) {
+        orm.updateOne("packinglist", condition, function (res) {
+            cb(res);
         });
     }
 };
-
 
 module.exports = list;

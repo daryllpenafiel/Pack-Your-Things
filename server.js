@@ -19,7 +19,7 @@ var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-
+app.use(express.static("public"));
 // Import routes and give the server access to them.
 var router = require("./controllers/list_controller.js");
 
@@ -28,3 +28,5 @@ app.use('/',router);
 app.listen(PORT, function() {
   console.log("App now listening at localhost:" + PORT);
 });
+
+
