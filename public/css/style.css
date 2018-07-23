@@ -6,3 +6,10 @@ body {
     height: 300px;
     width: 300px;
 }
+
+#new-item-field {
+    width: 620px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+

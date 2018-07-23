@@ -1,21 +1,32 @@
 var connection = require("./connection.js");
 
 var orm = {
-    selectAll: function(table,cb) {
-      var queryString = "SELECT * FROM "+ table + ";";
-      connection.query(queryString, function(err, result) {
-        if (err) throw err;
-        cb(result)
-      });
-    },
-    insertOne: function(table, colName, inputValue, cb) {
-      var queryString = "INSERT INTO " + table + " (??) VALUES (??)";
-      console.log(queryString);
-      connection.query(queryString, [table, colName, inputValue], function(err, result) {
+  selectAll: function (cb) {
+    connection.query("SELECT * FROM packinglist;", function (err, result) {
+      if (err) throw err;
+      cb(result)
+    });
+  },
+  /*insertOne: function(newThing,cb) {
+    var thing = {"thing_name": newThing};
+
+    connection.query('INSERT INTO packinglist SET ?', thing, function (err, result){
+      if (err) throw err;
+      cb(result);
+    })
+  },*/
+
+  insertOne: function (thing_name, cb) {
+
+    connection.query("INSERT INTO packinglist set ?", {
+        thing_name: thing_name,
+        packed: false
+      }, function (err, result) {
         if (err) throw err;
         cb(result);
-      });
-    },
+      })
+    }
+  /*, 
     updateOne: function(table, colName, inputValue, itemId, cb) {
       var queryString = "UPDATE ?? SET ?? = ?? WHERE id = ??";
   
@@ -24,7 +35,7 @@ var orm = {
           cb(result);
         }
       );
-    }
-  };
-  
-  module.exports = orm;
+    }*/
+};
+
+module.exports = orm;

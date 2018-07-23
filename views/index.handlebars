@@ -1,6 +1,21 @@
+<div class="container">
 
-{{#each packings}}
-    <p> {{this.thing_name}} </p>
-{{/each}}
+    <div class="row">
 
+        <div class="col-md-6 not-packed">
+            <h3>Not Packed Yet</h3>
+            {{#each packings}} {{#unless packed}}
+            <p class="thingP"> {{this.thing_name}} </p>
+            {{/unless}} {{/each}}
+        </div>
 
+        <div class="col-md-6 packed">
+            <h3>Packed</h3>
+            {{#each packings}} {{#if packed}}
+            <p class="thingP"> {{this.thing_name}} </p>
+            {{/if}} {{/each}}
+        </div>
+
+    </div>
+
+</div>

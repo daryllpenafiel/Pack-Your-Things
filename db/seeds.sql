@@ -1,2 +1,2 @@
-insert into packinglist (thing_name)
-values ("underwear"),("pants"),("shirt");
+INSERT INTO packinglist (thing_name)
+VALUES ("underwear"),("pants"),("shirt");

@@ -16,13 +16,12 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/list", function (req, res) {
-  packing.create([req.body.name], function (result) {
-    res.json({
-      id: result.insertId
+  packing.insertOne(req.body.thing_name, function () {
+    res.redirect("/");
     });
   });
-});
 
+  /*
 router.put("/api/list/:id", function (req, res) {
   var taskId = "id = " + req.params.id;
   packing.update(req.body, taskId, function (result) {
@@ -46,7 +45,7 @@ router.delete("/api/list/:id", function (req, res) {
       res.status(200).end();
     }
   });
-});
+});*/
 
 // Export routes for server.js to use.
 module.exports = router;
