@@ -26,11 +26,13 @@
 
     event.preventDefault();
 
-    var thing_name = $("#new-item-field").val();
+    var thing_name = {
+		thing_name: $("#new-item-field").val().trim()
+	};
     console.log(thing_name);
     $.ajax("/api/list", {
         type: "POST",
-        thing_name: thing_name
+        data: thing_name
     }).then(function () {
         console.log(thing_name + " added");
         location.reload();

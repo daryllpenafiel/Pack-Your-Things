@@ -20,7 +20,6 @@ var orm = {
 
     connection.query("INSERT INTO packinglist set ?", {
         thing_name: thing_name,
-        packed: false
       }, function (err, result) {
         if (err) throw err;
         cb(result);
