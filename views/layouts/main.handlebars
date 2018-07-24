@@ -43,13 +43,27 @@
 				event.preventDefault();
 
 				var id = $(this).attr("id");
-				console.log(id);
+				console.log("update " + id);
 
 				$.ajax("/api/list/" + id, {
 					type: "PUT",
 					data: id
 				}).then(
 					function () {
+						console.log("item packed");
+						location.reload();
+					}
+				);
+			});
+
+			$(".delete-item-button").on("click", function () {
+				var id = $(this).attr("id");
+				console.log("delete " + id);
+				$.ajax("/api/list/" + id, {
+					type: "DELETE"
+				}).then(
+					function () {
+						console.log("Deleted item")
 						location.reload();
 					}
 				);

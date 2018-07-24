@@ -9,7 +9,7 @@
                 <div class="thing-block">
                     <span class="thingSpan"> {{this.thing_name}} </span>
                     <input class="btn btn-primary pack-item-button" type="submit" value="Pack" id={{this.id}}>
-                    <input class="btn btn-primary delete-item-button" type="submit" id={{this.id}} value="Delete">
+                    <input class="btn btn-primary delete-item-button" type="delete" id={{this.id}} value="Delete">
                 </div>
                 {{/unless}} 
             {{/each}}
@@ -20,8 +20,8 @@
             {{#each packings}}
                 {{#if packed}}
                 <div class="thing-block">
-                <span class="thingSpan" id={{this.id}}> {{this.thing_name}} </span>
-                 <input class="btn btn-primary delete-item-button" type="submit" value="Delete">
+                <span class="thingSpan"> {{this.thing_name}} </span>
+                 <input class="btn btn-primary delete-item-button" type="delete" id={{this.id}} value="Delete">
                 </div>
                 {{/if}}
             {{/each}}

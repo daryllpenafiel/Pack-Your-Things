@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    background-image: url(http://eskipaper.com/images/simple-cloud-wallpaper-1.jpg);
 }
 
 #bag-pic{
@@ -17,15 +18,17 @@ body {
     padding: 5px;
 }
 
-.pack-item-button {
+.pack-item-button:hover {
     background-color: yellowgreen;
 }
 .pack-item-button {
     background-color: green;
+    width: 90px;
 }
 
 .delete-item-button {
     background-color: orange;
+    width: 90px;
 }
 
 .delete-item-button:hover {

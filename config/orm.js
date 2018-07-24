@@ -16,13 +16,14 @@ var orm = {
       })
     }, 
     updateOne: function(id, cb) {
-      connection.query("UPDATE packinglist SET ? WHERE ?", [{packed: true},{id:id}], function(err, result) {
+      connection.query("UPDATE packinglist SET ? WHERE ?",
+       [{packed: true},{id:id}], function(err, result) {
           if (err) throw err;
           cb(result);
         });
     },
     deleteOne: function(id, cb) {
-      connection.query("DELETE from packinglist WHERE ?", [{id:id}], function(err, result) {
+      connection.query("DELETE from packinglist WHERE ?", {id:id}, function(err, result) {
           if (err) throw err;
           cb(result);
         });
