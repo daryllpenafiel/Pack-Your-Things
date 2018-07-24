@@ -18,34 +18,14 @@ router.get("/", function (req, res) {
 router.post("/api/list", function (req, res) {
   packing.insertOne(req.body.thing_name, function () {
     res.redirect("/");
-    });
-  });
-
-  /*
-router.put("/api/list/:id", function (req, res) {
-  var taskId = "id = " + req.params.id;
-  packing.update(req.body, taskId, function (result) {
-    if (result.changedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
   });
 });
 
 router.delete("/api/list/:id", function (req, res) {
-  var taskId = "id = " + req.params.id;
-
-  packing.delete(taskId, function (result) {
-    if (result.affectedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
+  packing.updateOne(req.params.id, function () {
+    res.redirect("/");
+    })
   });
-});*/
 
 // Export routes for server.js to use.
 module.exports = router;

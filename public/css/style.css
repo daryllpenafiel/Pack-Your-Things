@@ -3,8 +3,8 @@ body {
 }
 
 #bag-pic{
-    height: 300px;
-    width: 300px;
+    height: 320px;
+    width: 320px;
 }
 
 #new-item-field {
@@ -13,3 +13,26 @@ body {
     margin-bottom: 20px;
 }
 
+.thing-block {
+    padding: 5px;
+}
+
+.pack-item-button {
+    background-color: yellowgreen;
+}
+.pack-item-button {
+    background-color: green;
+}
+
+.delete-item-button {
+    background-color: orange;
+}
+
+.delete-item-button:hover {
+    background-color: red;
+}
+
+.thingSpan {
+    font-size: 20px;
+    padding-right: 10px;
+}

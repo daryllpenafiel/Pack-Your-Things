@@ -10,13 +10,17 @@ var list = {
         orm.insertOne(thing_name, function (res) {
             cb(res);
         });
-    }
-    /*,
-    updateOne: function (condition, cb) {
-        orm.updateOne("packinglist", condition, function (res) {
+    },
+    updateOne: function (id, cb) {
+        orm.updateOne(id, function (res) {
             cb(res);
         });
-    }*/
+    },
+    deleteOne: function (id, cb) {
+        orm.deleteOne(id, function (res) {
+            cb(res);
+        });
+    }
 };
 
 module.exports = list;

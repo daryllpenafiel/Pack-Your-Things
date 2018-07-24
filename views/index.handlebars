@@ -3,19 +3,26 @@
     <div class="row">
 
         <div class="col-md-6 not-packed">
-            <h3>Not Packed Yet</h3>
+            <h4>Not Packed Yet</h4>
             {{#each packings}} 
                 {{#unless packed}}
-                <p class="thingP"> {{this.thing_name}} </p>
+                <div class="thing-block">
+                    <span class="thingSpan"> {{this.thing_name}} </span>
+                    <input class="btn btn-primary pack-item-button" type="submit" value="Pack" id={{this.id}}>
+                    <input class="btn btn-primary delete-item-button" type="submit" id={{this.id}} value="Delete">
+                </div>
                 {{/unless}} 
             {{/each}}
         </div>
 
         <div class="col-md-6 packed">
-            <h3>Packed</h3>
+            <h4>Packed</h4>
             {{#each packings}}
                 {{#if packed}}
-                <p class="thingP"> {{this.thing_name}} </p>
+                <div class="thing-block">
+                <span class="thingSpan" id={{this.id}}> {{this.thing_name}} </span>
+                 <input class="btn btn-primary delete-item-button" type="submit" value="Delete">
+                </div>
                 {{/if}}
             {{/each}}
         </div>
