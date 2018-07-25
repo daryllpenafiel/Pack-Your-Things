@@ -4,27 +4,56 @@
 
         <div class="col-md-6 not-packed">
             <h4>Not Packed Yet</h4>
-            {{#each packings}} 
-                {{#unless packed}}
-                <div class="thing-block">
-                    <span class="thingSpan"> {{this.thing_name}} </span>
-                    <input class="btn btn-primary pack-item-button" type="submit" value="Pack" id={{this.id}}>
-                    <input class="btn btn-primary delete-item-button" type="delete" id={{this.id}} value="Delete">
-                </div>
-                {{/unless}} 
-            {{/each}}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Thing Name</th>
+                        <th scope="col">Pack</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each packings}} {{#unless packed}}
+                    <tr>
+                        <td>
+                            <span class="thingSpan">{{this.thing_name}}</span>
+                        </td>
+                        <td>
+                            <input class="btn btn-primary pack-item-button" type="submit" value="Pack" id={{this.id}}>
+                        </td>
+                        <td>
+                            <input class="btn btn-primary delete-item-button" type="delete" id={{this.id}} value="Delete">
+                        </td>
+                        {{/unless}}
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
         </div>
 
         <div class="col-md-6 packed">
             <h4>Packed</h4>
-            {{#each packings}}
-                {{#if packed}}
-                <div class="thing-block">
-                <span class="thingSpan"> {{this.thing_name}} </span>
-                 <input class="btn btn-primary delete-item-button" type="delete" id={{this.id}} value="Delete">
-                </div>
-                {{/if}}
-            {{/each}}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Thing Name</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each packings}} {{#if packed}}
+                    <tr>
+                        <td>
+                            <span class="thingSpan">{{this.thing_name}}</span>
+                        </td>
+                        <td>
+                            <input class="btn btn-primary delete-item-button" type="delete" id={{this.id}} value="Delete">
+                        </td>
+                        {{/if}} {{/each}}
+                    </tr>
+                </tbody>
+
+            </table>
         </div>
 
     </div>
