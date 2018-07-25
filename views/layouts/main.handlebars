@@ -30,13 +30,24 @@
 					thing_name: $("#new-item-field").val().trim()
 				};
 				console.log(thing_name);
-				$.ajax("/api/list", {
-					type: "POST",
-					data: thing_name
-				}).then(function () {
-					console.log(thing_name + " added");
-					location.reload();
-				})
+
+				//check if input field is empty
+				if (thing_name.thing_name) {
+					itemPost();
+				} else {
+					alert("Please input an item.");
+				}
+
+				function itemPost() {
+					$.ajax("/api/list", {
+						type: "POST",
+						data: thing_name
+					}).then(function () {
+						console.log(thing_name + " added");
+						location.reload();
+					})
+				}
+
 			});
 
 			$(".pack-item-button").on("click", function () {
@@ -51,22 +62,22 @@
 				}).then(
 					function () {
 						console.log("item packed");
-						location.reload();
+						window.location.reload();
 					}
 				);
 			});
 
 			$(".delete-item-button").on("click", function () {
 				var id = $(this).attr("id");
-				console.log("delete " + id);
+				console.log('WTF!');
 				$.ajax("/api/list/" + id, {
 					type: "DELETE"
 				}).then(
 					function () {
-						console.log("Deleted item")
-						location.reload();
+						window.location.reload();
 					}
 				);
+
 			});
 
 		});

@@ -19,7 +19,7 @@ router.get("/", function (req, res) {
 //CREATE
 router.post("/api/list/", function (req, res) {
   packing.insertOne(req.body.thing_name, function () {
-    res.redirect("/");
+    res.end();
   });
 });
 
@@ -27,7 +27,7 @@ router.post("/api/list/", function (req, res) {
 router.put("/api/list/:id", function (req, res) {
 
   packing.updateOne(req.params.id, function () {
-    res.redirect("/");
+    res.end();
     })
   });
 
@@ -36,7 +36,7 @@ router.put("/api/list/:id", function (req, res) {
 router.delete("/api/list/:id", function (req, res) {
 
   packing.deleteOne(req.params.id, function () {
-    res.redirect("/");
+    res.end();
     })
   });
 
