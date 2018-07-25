@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/daryllpenafiel/burger.git"
+    "url": "git+https://github.com/daryllpenafiel/Pack-Your-Things.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/daryllpenafiel/burger/issues"
+    "url": "https://github.com/daryllpenafiel/Pack-Your-Things/issues"
   },
-  "homepage": "https://github.com/daryllpenafiel/burger#readme",
+  "homepage": "https://github.com/daryllpenafiel/Pack-Your-Things#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
